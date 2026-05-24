@@ -1,13 +1,20 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
   <title>Layered // Vault</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+
 </head>
+
 <body>
 
 <canvas id="matrix"></canvas>
@@ -17,9 +24,10 @@
 
 <div class="container">
 
-  <div class="terminal">
+  <div class="terminal" id="terminal">
 
     <div class="topbar">
+
       <div class="dots">
         <span class="dot red"></span>
         <span class="dot yellow"></span>
@@ -29,38 +37,47 @@
       <div class="title">
         root@vault:~
       </div>
+
     </div>
 
     <div class="hud">
-      <span id="levelName"></span>
-      <span id="timer"></span>
+
+      <span id="level"></span>
+
+      <span id="clock"></span>
+
     </div>
 
     <pre id="output"></pre>
 
-    <div class="input-wrapper">
+    <div class="input-box">
+
       <span class="prompt">></span>
 
       <input
         type="text"
-        id="commandInput"
+        id="input"
         autocomplete="off"
         spellcheck="false"
-        placeholder="type command..."
-      >
+        autofocus
+      />
+
     </div>
 
     <div class="footer">
+
       <span id="progress"></span>
+
       <span id="difficulty"></span>
+
     </div>
 
   </div>
 
 </div>
 
-<!-- hidden clue -->
 <!-- dHJ1c3Qgbm90aGluZw== -->
+<!-- not every trail is real -->
 <!-- answers are lowercase -->
 
 <script src="script.js"></script>
