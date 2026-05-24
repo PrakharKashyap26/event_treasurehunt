@@ -1,0 +1,11 @@
+{
+  "id": 3,
+  "title": "Persistence",
+  "story": "The network fragments memory. Some things are preserved only on your local machine.",
+  "answer": "void",
+  "hints": [
+    "Check your browser's application memory.",
+    "Where is local state stored?"
+  ],
+  "puzzleType": "localstorage"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "title": "Initialization",
+  "story": "AETHER detects new operators... You are not supposed to be here. Or perhaps you are. Find the fragmented key.",
+  "answer": "ghost",
+  "hints": [
+    "Inspect the page source",
+    "The answer is inside a comment"
+  ],
+  "puzzleType": "html-comment"
+}

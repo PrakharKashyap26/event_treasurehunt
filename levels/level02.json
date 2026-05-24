@@ -1,0 +1,11 @@
+{
+  "id": 2,
+  "title": "Obfuscation",
+  "story": "Interesting. You have basic competency. But can you see what is hidden in plain sight?",
+  "answer": "cipher",
+  "hints": [
+    "Look closely at the glitches.",
+    "CSS sometimes holds secrets."
+  ],
+  "puzzleType": "css-pseudo"
+}

@@ -3,22 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Odyssey</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>AETHER: The Ghost Protocol</title>
+    <!-- AETHER System Initialize -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app-container">
-        <!-- CRT scanline overlay -->
-        <div class="crt-overlay"></div>
-        <!-- [VAULT KEEPER LOG]: Left the temporary auth key here just in case. Key: obsidian_core -->
-        
-        <!-- Main content area for router views -->
-        <div id="view-container">
-            <!-- Dynamic content injected here by Router -->
-        </div>
-    </div>
+    <div id="crt-overlay"></div>
+    <div id="scanline"></div>
     
-    <script type="module" src="js/main.js"></script>
+    <!-- the first fragment is forgotten -->
+    
+    <audio id="ambient-audio" loop>
+        <!-- Synthesized audio or placeholder for static -->
+        <source src="assets/ambient.mp3" type="audio/mpeg">
+    </audio>
+    
+    <main id="terminal">
+        <header>
+            <div id="status-bar">
+                <span class="glitch" data-text="AETHER_OS v9.4.2">AETHER_OS v9.4.2</span>
+                <span id="timer">00:00:00</span>
+                <span id="level-display">L01 // INIT</span>
+            </div>
+        </header>
+
+        <section id="output-container">
+            <div id="story-output"></div>
+            <div id="level-hints"></div>
+        </section>
+
+        <section id="input-container">
+            <span class="prompt">operator@aether:~$</span>
+            <input type="text" id="answer-input" autocomplete="off" spellcheck="false" autofocus>
+        </section>
+    </main>
+
+    <script src="js/levels.js"></script>
+    <script src="js/puzzles.js"></script>
+    <script src="js/game.js"></script>
 </body>
 </html>

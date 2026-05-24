@@ -1,0 +1,11 @@
+{
+  "id": 25,
+  "title": "Containment",
+  "story": "You have reached the end. Or rather, you have reached the edge of the box. There is no answer here. Only observation.",
+  "answer": "this-is-impossible",
+  "hints": [
+    "The puzzle is containment.",
+    "There is no way out."
+  ],
+  "puzzleType": "impossible"
+}
