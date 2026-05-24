@@ -1,180 +1,179 @@
-// script.js
 
 const levels = [
 
 {
 riddle:
-"In a directed graph with weighted edges, I guarantee shortest paths only if no edge relaxes after |V|-1 iterations. Name the algorithm.",
+"Layer 1\n\nYou awaken inside a dead machine.\nA terminal flickers:\n\n'Packets are arriving.\nThey wait in order.\nThe first to enter must be the first to leave.\nName the structure controlling the gateway.'",
+answer: "queue",
+hint: "FIFO"
+},
+
+{
+riddle:
+"Layer 2\n\nThe gateway opens.\nInside, routers whisper:\n\n'To escape this network,\nyou must discover the path of minimum cost.\nNegative edges may exist.\nWhich algorithm survives here?'",
 answer: "bellmanford",
-hint: "Negative weights are allowed."
+hint: "Works with negative weights"
 },
 
 {
 riddle:
-"I am the CPU scheduling algorithm whose average waiting time is optimal in theory but impossible to implement perfectly without future knowledge.",
-answer: "sjf",
-hint: "Shortest ___ First"
+"Layer 3\n\nThe shortest path reveals a hidden server.\nIts address is unreadable.\nA voice echoes:\n\n'Names are meaningless.\nTranslate the domain.\nWhat system converts names into IP addresses?'",
+answer: "dns",
+hint: "Internet phonebook"
 },
 
 {
 riddle:
-"In database normalization, I remove partial dependency but still allow transitive dependency. Which normal form am I?",
-answer: "2nf",
-hint: "Second Normal Form"
+"Layer 4\n\nThe IP resolves.\nA locked process appears.\nTasks pile upward endlessly.\nOnly the most recent can leave first.\n\nName the structure.",
+answer: "stack",
+hint: "LIFO"
 },
 
 {
 riddle:
-"I am the attack where branch predictor timing leaks cryptographic secrets from speculative execution.",
-answer: "spectre",
-hint: "2018 CPU vulnerability"
+"Layer 5\n\nThe stack collapses into fragments.\nA recursive signal appears:\n\n'Divide.\nSort.\nMerge.\nRepeat.'\n\nWhich algorithm speaks?",
+answer: "mergesort",
+hint: "Divide and conquer"
 },
 
 {
 riddle:
-"I am the consistency model where writes become visible in the same order to all processors.",
-answer: "sequentialconsistency",
-hint: "Stronger than causal consistency"
+"Layer 6\n\nSorted memory reveals corrupted processes.\nResources are deadlocking.\nA hidden protocol asks:\n\n'Find a safe state before allocation.\nWhich algorithm protects the system?'",
+answer: "bankersalgorithm",
+hint: "Operating Systems"
 },
 
 {
 riddle:
-"In operating systems, I occur when a process keeps waiting forever due to unfair scheduling.",
-answer: "starvation",
-hint: "Opposite of fairness"
+"Layer 7\n\nThe system stabilizes.\nA browser opens.\nBut the warning reads:\n\n'Connection insecure.'\n\nYou must choose the secure protocol.",
+answer: "https",
+hint: "Encrypted web"
 },
 
 {
 riddle:
-"I am the theorem proving no distributed consensus algorithm can tolerate even one faulty process in a fully asynchronous system.",
-answer: "flpimpossibility",
-hint: "Named after Fischer, Lynch, and Paterson"
+"Layer 8\n\nThe encrypted tunnel leads into a forest.\nEvery node tries to remain balanced.\nTwo inventors guard the entrance.\n\nName their tree.",
+answer: "avl",
+hint: "Self-balancing BST"
 },
 
 {
 riddle:
-"I am the hashing collision attack exploiting the birthday paradox.",
-answer: "birthdayattack",
-hint: "Probability paradox"
+"Layer 9\n\nThe tree roots connect to transport channels.\nOne guarantees delivery.\nPackets lost will return.\nOrder is sacred.\n\nName the protocol.",
+answer: "tcp",
+hint: "Reliable transport"
 },
 
 {
 riddle:
-"I naturally produces postfix notation in expression trees.",
-answer: "postorder",
-hint: "Tree traversal"
+"Layer 10\n\nReliable transport unlocks source code.\nBut the machine cannot understand it.\n\n'Translate human logic into machine instructions.'\n\nWhat must execute?",
+answer: "compiler",
+hint: "High-level to machine code"
 },
 
 {
 riddle:
-"I am the lock-free synchronization primitive abbreviated CAS.",
-answer: "compareandswap",
-hint: "Atomic hardware operation"
+"Layer 11\n\nThe compiled code enters a database vault.\nDependencies spread like infection.\nTransitive dependency must disappear.\n\nWhich normal form restores order?",
+answer: "3nf",
+hint: "Normalization"
 },
 
 {
 riddle:
-"I am the database isolation anomaly where two transactions overwrite each other unknowingly.",
-answer: "lostupdate",
-hint: "Concurrency issue"
+"Layer 12\n\nInside the vault lies a blockchain.\nBlocks cannot be forged.\nEvery block bears the same cryptographic mark.\n\nName the hashing algorithm.",
+answer: "sha256",
+hint: "Bitcoin"
 },
 
 {
 riddle:
-"I am the page replacement algorithm suffering from Belady’s anomaly.",
-answer: "fifo",
-hint: "First In..."
+"Layer 13\n\nHashes flood the CPU.\nProcesses compete for execution.\nThe scheduler whispers:\n\n'Execute the process with shortest remaining time.'\n\nName the algorithm.",
+answer: "srtf",
+hint: "Preemptive scheduling"
 },
 
 {
 riddle:
-"I am the routing protocol using split horizon and poison reverse.",
-answer: "rip",
-hint: "Distance vector routing"
+"Layer 14\n\nThe scheduler opens virtualization chambers.\nMachines run within machines.\n\n'Who controls the virtual worlds?'",
+answer: "hypervisor",
+hint: "VM manager"
 },
 
 {
 riddle:
-"I am the complexity class containing problems verifiable in polynomial time.",
-answer: "np",
-hint: "P vs ?"
+"Layer 15\n\nThe virtual world forms a graph.\nTraversal begins level by level.\nA queue guides the journey.\n\nName the traversal.",
+answer: "bfs",
+hint: "Breadth"
 },
 
 {
 riddle:
-"I prevent deadlocks by forcing resource requests in increasing numerical order.",
-answer: "resourceordering",
-hint: "Deadlock prevention technique"
+"Layer 16\n\nTraversal reveals corrupted memory.\nBits have flipped.\nExtra parity must repair them.\n\nName the code.",
+answer: "hammingcode",
+hint: "Error correction"
 },
 
 {
 riddle:
-"I am the normal form removing multivalued dependencies.",
-answer: "4nf",
-hint: "Beyond BCNF"
+"Layer 17\n\nRecovered data points toward an ancient SQL terminal.\nA command blinks:\n\n'Remove the table completely.'\n\nType the command.",
+answer: "drop",
+hint: "DDL"
 },
 
 {
 riddle:
-"I am the compiler optimization where repeated expressions are computed once.",
-answer: "commonsubexpressionelimination",
-hint: "Optimization acronym: CSE"
+"Layer 18\n\nThe deleted tables expose an API gateway.\nServers answer distant clients.\nThe architecture becomes clear.\n\nName the model.",
+answer: "clientserver",
+hint: "Distributed systems"
 },
 
 {
 riddle:
-"I redirect LAN traffic using fake ARP replies.",
-answer: "arpspoofing",
-hint: "MITM attack"
+"Layer 19\n\nThe gateway measures search efficiency.\nEach split halves the remaining space.\n\nState the complexity.",
+answer: "logn",
+hint: "Binary search"
 },
 
 {
 riddle:
-"I state a language is regular iff its equivalence relation has finite index.",
-answer: "myhillnerode",
-hint: "Automata theory theorem"
+"Layer 20\n\nThe search locates hidden files.\nThey travel securely through SSH tunnels.\n\nName the protocol.",
+answer: "sftp",
+hint: "Secure file transfer"
 },
 
 {
 riddle:
-"I am the distributed systems problem involving unreliable communication between generals.",
-answer: "twogeneralsproblem",
-hint: "Classic impossibility proof"
+"Layer 21\n\nThe files overflow memory.\nPages must be replaced.\nThe oldest untouched memories fade first.\n\nWhich algorithm decides?",
+answer: "lru",
+hint: "Page replacement"
 },
 
 {
 riddle:
-"I am the cache coherence protocol with states Modified, Exclusive, Shared, Invalid.",
-answer: "mesi",
-hint: "4-state protocol"
+"Layer 22\n\nOne surviving file contains plaintext secrets.\nThey must become unreadable.\n\nName the process.",
+answer: "encryption",
+hint: "Cryptography"
 },
 
 {
 riddle:
-"I combine momentum and adaptive learning rates in deep learning optimization.",
-answer: "adam",
-hint: "Popular optimizer"
+"Layer 23\n\nEncrypted scripts awaken a runtime.\nBuilt upon Chrome's V8 engine,\nit escapes the browser.\n\nName it.",
+answer: "nodejs",
+hint: "JavaScript runtime"
 },
 
 {
 riddle:
-"I am the cryptographic vulnerability caused by nonce reuse in stream ciphers.",
-answer: "noncereuse",
-hint: "Never repeat random values"
+"Layer 24\n\nThe runtime creates an object.\nOnly one instance may ever exist.\n\nName the design pattern.",
+answer: "singleton",
+hint: "Creational pattern"
 },
 
 {
 riddle:
-"I exploit overlapping subproblems and optimal substructure.",
-answer: "dynamicprogramming",
-hint: "Memoization"
-},
-
-{
-riddle:
-"I am the consensus algorithm designed as a simpler alternative to Paxos.",
-answer: "raft",
-hint: "Used in etcd and Kafka ecosystem"
+"Layer 25\n\nThe final chamber opens.\nBeneath every abstraction,\nbeneath memory, processes, schedulers,\nand machines themselves...\n\nOne hidden layer controls all.\n\nName it.",
+answer: "operatingsystem",
+hint: "Kernel space"
 }
 
 ];
