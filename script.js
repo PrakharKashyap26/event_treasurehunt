@@ -1,237 +1,187 @@
-const input =
-document.getElementById("commandInput");
+// Better structure:
+// NEVER use:
+// answer: "queue"
+//
+// Instead:
+// - store fragmented hashes
+// - reconstruct at runtime
+// - avoid obvious naming
+// - make reverse engineering harder
 
-const output =
-document.getElementById("output");
-
-const clueArea =
-document.getElementById("clueArea");
-
-const stages = [
-
-{
-answer:"echo",
-
-clues:[
+const levels = [
 
 {
-trigger:"help",
-text:
-`
-AVAILABLE MODULES:
+id: 1,
 
-- repeat
-- reflect
-- listen
-`
-},
+name: "BOOT",
 
-{
-trigger:"listen",
-text:
-`
-The machine returns
-whatever enters unchanged.
-`
-},
+difficulty: "LOW",
 
-{
-trigger:"reflect",
-text:
-`
-Reflection without transformation.
-`
-},
-
-{
-trigger:"repeat",
-text:
-`
-Input equals output.
-`
-}
-
+gate:
+[
+"e3",
+"b0",
+"c4",
+"42",
+"98",
+"fc"
 ],
 
-fake:[
-"dijkstra",
-"ping",
-"print"
-]
+text:
+`The machine only repeats what it hears.
+
+Commands available:
+help
+listen
+reflect
+repeat`
 },
 
 {
-answer:"bellmanford",
+id: 2,
 
-clues:[
+name: "NEGATIVE ROUTES",
 
-{
-trigger:"route",
+difficulty: "MEDIUM",
+
+gate:
+[
+"fa",
+"34",
+"9d",
+"12",
+"8b",
+"aa"
+],
+
 text:
-`
-Shortest path requested.
-`
-},
+`A routing failure occurred.
 
-{
-trigger:"repair",
-text:
-`
-Negative cost detected.
-`
-},
-
-{
-trigger:"analyze",
-text:
-`
 Dijkstra aborted.
-`
+
+One edge became negative.
+
+Commands available:
+help
+route
+trace
+graph`
 },
 
 {
-trigger:"graph",
-text:
-`
-Algorithm survives below zero.
-`
-}
+id: 3,
 
+name: "MEMORY PRESSURE",
+
+difficulty: "HIGH",
+
+gate:
+[
+"8f",
+"c2",
+"91",
+"77",
+"4e",
+"da"
 ],
 
-fake:[
-"bfs",
-"dfs",
-"dijkstra"
-]
+text:
+`The oldest untouched page disappeared.
+
+FIFO failed.
+
+Recently used memory survived.
+
+Commands available:
+help
+memory
+pages
+trace`
 }
 
 ];
 
-let currentStage = 0;
+// ======================================
+// Runtime validation
+// ======================================
 
-function loadStage(){
+async function digest(input) {
 
-  output.innerHTML = "";
+  const encoded =
+    new TextEncoder()
+      .encode(input);
 
-  clueArea.innerHTML = "";
+  const buffer =
+    await crypto.subtle.digest(
+      "SHA-256",
+      encoded
+    );
 
-  input.value = "";
-
-  const fake =
-  stages[currentStage].fake;
-
-  console.log(
-    "DEBUG:",
-    fake[
-      Math.floor(
-        Math.random()*fake.length
-      )
-    ]
-  );
-
+  return Array
+    .from(
+      new Uint8Array(buffer)
+    )
+    .map(x =>
+      x
+        .toString(16)
+        .padStart(2, "0")
+    )
+    .join("");
 }
 
-function unlockNextStage(){
+// ======================================
+// Hidden matcher
+// ======================================
 
-  currentStage++;
+async function verify(input, current) {
 
-  if(currentStage >= stages.length){
+  const hashed =
+    await digest(
+      input
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "")
+    );
 
-    document.querySelector(".content")
-    .innerHTML = `
-      <div class="main-clue">
-        SYSTEM ASCENSION COMPLETE
-      </div>
+  const target =
+    levels[current]
+      .gate
+      .join("");
 
-      <div class="clue">
-        You learned to investigate,
-        not guess.
-      </div>
-    `;
+  return hashed.startsWith(target);
+}
 
-    return;
+// ======================================
+// Example usage
+// ======================================
+
+async function unlock(text) {
+
+  const ok =
+    await verify(
+      text,
+      currentLevel
+    );
+
+  if (ok) {
+
+    output.innerText +=
+`\n\nACCESS GRANTED`;
+
+    currentLevel++;
+
+    setTimeout(
+      loadLevel,
+      1000
+    );
+
+  } else {
+
+    output.innerText +=
+`\n\nACCESS DENIED`;
+
+    console.log(
+      "False trail detected."
+    );
   }
-
-  document.getElementById("mainClue")
-  .innerText =
-  "Some routes fail when the debt becomes negative.";
-
-  loadStage();
-
 }
-
-input.addEventListener(
-"keydown",
-function(e){
-
-if(e.key !== "Enter") return;
-
-const value =
-input.value
-.trim()
-.toLowerCase();
-
-output.innerHTML += `
-<div>
->> ${value}
-</div>
-`;
-
-input.value = "";
-
-const stage =
-stages[currentStage];
-
-if(value === stage.answer){
-
-  output.innerHTML += `
-  <div class="success">
-    ACCESS GRANTED
-  </div>
-  `;
-
-  setTimeout(
-    unlockNextStage,
-    1500
-  );
-
-  return;
-}
-
-const clue =
-stage.clues.find(
-c => c.trigger === value
-);
-
-if(clue){
-
-  const div =
-  document.createElement("div");
-
-  div.className = "clue";
-
-  div.innerText = clue.text;
-
-  clueArea.appendChild(div);
-
-}else{
-
-  output.innerHTML += `
-  <div class="error">
-    UNKNOWN COMMAND
-  </div>
-  `;
-}
-
-});
-
-loadStage();
-
-/*
-Hidden clue:
-
-VGhlIG1hY2hpbmUgc3BlYWtzIGluIGVjaG9lcw==
-
-(base64)
-*/

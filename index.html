@@ -1,63 +1,67 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layered // Vault</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="noise"></div>
+<canvas id="matrix"></canvas>
+
+<div class="noise"></div>
+<div class="scanlines"></div>
 
 <div class="container">
 
   <div class="terminal">
 
     <div class="topbar">
-      <span class="dot red"></span>
-      <span class="dot yellow"></span>
-      <span class="dot green"></span>
+      <div class="dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
 
       <div class="title">
-        LAYERED // VAULT
+        root@vault:~
       </div>
     </div>
 
-    <div class="content">
+    <div class="hud">
+      <span id="levelName"></span>
+      <span id="timer"></span>
+    </div>
 
-      <div class="layer">
-        LAYER 1
-      </div>
+    <pre id="output"></pre>
 
-      <div id="mainClue" class="main-clue">
-        The machine only repeats what it hears.
-      </div>
+    <div class="input-wrapper">
+      <span class="prompt">></span>
 
-      <div id="clueArea">
+      <input
+        type="text"
+        id="commandInput"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="type command..."
+      >
+    </div>
 
-      </div>
-
-      <div class="terminal-input">
-
-        <span>>></span>
-
-        <input
-          id="commandInput"
-          type="text"
-          autocomplete="off"
-          spellcheck="false"
-        />
-
-      </div>
-
-      <div id="output"></div>
-
+    <div class="footer">
+      <span id="progress"></span>
+      <span id="difficulty"></span>
     </div>
 
   </div>
 
 </div>
+
+<!-- hidden clue -->
+<!-- dHJ1c3Qgbm90aGluZw== -->
+<!-- answers are lowercase -->
 
 <script src="script.js"></script>
 
