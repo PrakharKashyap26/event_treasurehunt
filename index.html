@@ -1,86 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>Layered // Vault</title>
-
-  <link rel="stylesheet" href="style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Odyssey</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<canvas id="matrix"></canvas>
-
-<div class="noise"></div>
-<div class="scanlines"></div>
-
-<div class="container">
-
-  <div class="terminal" id="terminal">
-
-    <div class="topbar">
-
-      <div class="dots">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-      </div>
-
-      <div class="title">
-        root@vault:~
-      </div>
-
+    <div id="app-container">
+        <!-- CRT scanline overlay -->
+        <div class="crt-overlay"></div>
+        <!-- [VAULT KEEPER LOG]: Left the temporary auth key here just in case. Key: obsidian_core -->
+        
+        <!-- Main content area for router views -->
+        <div id="view-container">
+            <!-- Dynamic content injected here by Router -->
+        </div>
     </div>
-
-    <div class="hud">
-
-      <span id="level"></span>
-
-      <span id="clock"></span>
-
-    </div>
-
-    <pre id="output"></pre>
-
-    <div class="input-box">
-
-      <span class="prompt">></span>
-
-      <input
-        type="text"
-        id="input"
-        autocomplete="off"
-        spellcheck="false"
-        autofocus
-      />
-
-    </div>
-
-    <div class="footer">
-
-      <span id="progress"></span>
-
-      <span id="difficulty"></span>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!-- dHJ1c3Qgbm90aGluZw== -->
-<!-- not every trail is real -->
-<!-- answers are lowercase -->
-
-<script src="script.js"></script>
-
+    
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
