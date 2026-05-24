@@ -1,99 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Layered // Vault</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!--
-    Layered // Vault
-    - An immersive browser ARG + cryptopuzzle experience.
-    - Hints and clues are hidden throughout comments, class names, console logs,
-      Base64 blobs, invisible unicode, and encoded assets.
-    - Some clues only make sense later. Inspect responsibly.
-  -->
+<div id="noise"></div>
 
-  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+<div class="container">
 
-  <div class="noise" aria-hidden="true"></div>
-  <div class="scanlines" aria-hidden="true"></div>
+  <div class="terminal">
 
-  <audio id="ambientAudio" loop crossorigin="anonymous">
-    <source src="assets/audio/ambient.mp3" type="audio/mpeg">
-  </audio>
-  <audio id="staticAudio" loop crossorigin="anonymous">
-    <source src="assets/audio/static.mp3" type="audio/mpeg">
-  </audio>
+    <div class="topbar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
 
-  <main class="vault"> 
+      <div class="title">
+        LAYERED // VAULT
+      </div>
+    </div>
 
-    <section class="terminal glass" id="terminal" role="application" aria-label="Vault terminal">
+    <div class="content">
 
-      <div class="topbar">
-        <div class="dots">
-          <span class="dot red"></span>
-          <span class="dot yellow"></span>
-          <span class="dot green"></span>
-        </div>
-        <div class="terminal-title glitch">Layered // Vault</div>
-        <div class="status led">BOOT</div>
+      <div class="layer">
+        LAYER 1
       </div>
 
-      <div class="hud">
-        <div class="left">
-          <span class="label">Layer</span> <span id="levelLabel">—</span>
-        </div>
-        <div class="center">
-          <span id="timer">—</span>
-        </div>
-        <div class="right">
-          <span class="label">Progress</span> <span id="progress">0/26</span>
-        </div>
+      <div id="mainClue" class="main-clue">
+        The machine only repeats what it hears.
       </div>
 
-      <pre id="riddle" class="riddle" aria-live="polite">Initializing...</pre>
+      <div id="clueArea">
 
-      <div class="shell">
-        <span class="prompt">root@vault:~#</span>
-        <input id="shellInput" autocomplete="off" placeholder="type command or answer" spellcheck="false">
       </div>
 
-      <div class="controls">
-        <button id="submitBtn" class="btn primary">ENTER</button>
-        <button id="hintBtn" class="btn">TRACE</button>
-        <button id="restartBtn" class="btn danger">REBOOT</button>
-        <button id="inspectBtn" class="btn">FILES</button>
+      <div class="terminal-input">
+
+        <span>>></span>
+
+        <input
+          id="commandInput"
+          type="text"
+          autocomplete="off"
+          spellcheck="false"
+        />
+
       </div>
 
-      <div id="message" class="message" role="status" aria-live="assertive"></div>
+      <div id="output"></div>
 
-      <div class="footer">
-        <div class="left small">Difficulty: <span id="difficulty">Adaptive</span></div>
-        <div class="right small">Achievements: <span id="achCount">0</span></div>
-      </div>
+    </div>
 
-    </section>
-
-    <aside id="console" class="console" aria-hidden="true"></aside>
-
-  </main>
-
-  <!-- Hidden / Easter-egg elements -->
-  <div id="hidden" style="display:none">
-    <!-- base64 blob: c2VjcmV0X2hpbmQ= -->
-    <img id="steg" src="assets/images/placeholder.png" alt="" />
   </div>
 
-  <!-- Developer clues (visible in source) -->
-  <!--
-    clue-01: answers are hashed with SHA256 + salt
-    clue-02: use console.logs for packet traces
-    clue-03: CSS class names may carry binary: class="bin-010010"
-  -->
+</div>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
