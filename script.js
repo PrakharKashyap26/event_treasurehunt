@@ -1,193 +1,481 @@
+// script.js
 
 const levels = [
 
 {
 riddle:
-"Layer 1\n\nYou awaken inside a dead machine.\nA terminal flickers:\n\n'Packets are arriving.\nThey wait in order.\nThe first to enter must be the first to leave.\nName the structure controlling the gateway.'",
+`Layer 1
+
+You awaken inside a dead machine.
+
+A terminal flickers:
+
+"Packets are arriving.
+They wait in order.
+The first to enter
+must be the first to leave.
+
+Name the structure
+controlling the gateway."`,
+
 answer: "queue",
+
 hint: "FIFO"
 },
 
 {
 riddle:
-"Layer 2\n\nThe gateway opens.\nInside, routers whisper:\n\n'To escape this network,\nyou must discover the path of minimum cost.\nNegative edges may exist.\nWhich algorithm survives here?'",
+`Layer 2
+
+The gateway opens.
+
+Routers whisper:
+
+"To escape this network,
+find the shortest path,
+even if negative edges exist."
+
+Which algorithm survives here?`,
+
 answer: "bellmanford",
-hint: "Works with negative weights"
+
+hint: "Shortest path with negative weights"
 },
 
 {
 riddle:
-"Layer 3\n\nThe shortest path reveals a hidden server.\nIts address is unreadable.\nA voice echoes:\n\n'Names are meaningless.\nTranslate the domain.\nWhat system converts names into IP addresses?'",
+`Layer 3
+
+The path reveals a hidden server.
+
+Its address is unreadable.
+
+A voice echoes:
+
+"Translate names
+into machine destinations."
+
+What system performs this?`,
+
 answer: "dns",
+
 hint: "Internet phonebook"
 },
 
 {
 riddle:
-"Layer 4\n\nThe IP resolves.\nA locked process appears.\nTasks pile upward endlessly.\nOnly the most recent can leave first.\n\nName the structure.",
+`Layer 4
+
+The server opens.
+
+Processes pile upward endlessly.
+
+Only the newest may leave first.
+
+Name the structure.`,
+
 answer: "stack",
+
 hint: "LIFO"
 },
 
 {
 riddle:
-"Layer 5\n\nThe stack collapses into fragments.\nA recursive signal appears:\n\n'Divide.\nSort.\nMerge.\nRepeat.'\n\nWhich algorithm speaks?",
+`Layer 5
+
+The stack collapses into fragments.
+
+A recursive signal appears:
+
+"Divide.
+Sort.
+Merge.
+Repeat."
+
+Which algorithm speaks?`,
+
 answer: "mergesort",
+
 hint: "Divide and conquer"
 },
 
 {
 riddle:
-"Layer 6\n\nSorted memory reveals corrupted processes.\nResources are deadlocking.\nA hidden protocol asks:\n\n'Find a safe state before allocation.\nWhich algorithm protects the system?'",
+`Layer 6
+
+Sorted memory reveals deadlocked resources.
+
+The system asks:
+
+"Find a safe state
+before allocation."
+
+Which algorithm protects the machine?`,
+
 answer: "bankersalgorithm",
+
 hint: "Operating Systems"
 },
 
 {
 riddle:
-"Layer 7\n\nThe system stabilizes.\nA browser opens.\nBut the warning reads:\n\n'Connection insecure.'\n\nYou must choose the secure protocol.",
+`Layer 7
+
+The system stabilizes.
+
+A browser opens.
+
+Warning:
+"Connection insecure."
+
+Choose the secure protocol.`,
+
 answer: "https",
-hint: "Encrypted web"
+
+hint: "Encrypted web protocol"
 },
 
 {
 riddle:
-"Layer 8\n\nThe encrypted tunnel leads into a forest.\nEvery node tries to remain balanced.\nTwo inventors guard the entrance.\n\nName their tree.",
+`Layer 8
+
+The encrypted tunnel leads into a forest.
+
+Every node struggles
+to remain balanced.
+
+Two inventors guard the entrance.
+
+Name their tree.`,
+
 answer: "avl",
+
 hint: "Self-balancing BST"
 },
 
 {
 riddle:
-"Layer 9\n\nThe tree roots connect to transport channels.\nOne guarantees delivery.\nPackets lost will return.\nOrder is sacred.\n\nName the protocol.",
+`Layer 9
+
+The tree roots connect
+to transport channels.
+
+Packets lost will return.
+Order is sacred.
+
+Name the protocol.`,
+
 answer: "tcp",
+
 hint: "Reliable transport"
 },
 
 {
 riddle:
-"Layer 10\n\nReliable transport unlocks source code.\nBut the machine cannot understand it.\n\n'Translate human logic into machine instructions.'\n\nWhat must execute?",
+`Layer 10
+
+Reliable transport unlocks source code.
+
+The machine cannot understand it.
+
+"Translate human logic
+into machine instructions."
+
+What must execute?`,
+
 answer: "compiler",
-hint: "High-level to machine code"
+
+hint: "Programming Languages"
 },
 
 {
 riddle:
-"Layer 11\n\nThe compiled code enters a database vault.\nDependencies spread like infection.\nTransitive dependency must disappear.\n\nWhich normal form restores order?",
+`Layer 11
+
+Compiled code enters a database vault.
+
+Dependencies spread like infection.
+
+Transitive dependency
+must disappear.
+
+Which normal form restores order?`,
+
 answer: "3nf",
-hint: "Normalization"
+
+hint: "Database normalization"
 },
 
 {
 riddle:
-"Layer 12\n\nInside the vault lies a blockchain.\nBlocks cannot be forged.\nEvery block bears the same cryptographic mark.\n\nName the hashing algorithm.",
+`Layer 12
+
+Inside the vault lies a blockchain.
+
+Every block bears
+the same cryptographic mark.
+
+Name the hashing algorithm.`,
+
 answer: "sha256",
-hint: "Bitcoin"
+
+hint: "Used in Bitcoin"
 },
 
 {
 riddle:
-"Layer 13\n\nHashes flood the CPU.\nProcesses compete for execution.\nThe scheduler whispers:\n\n'Execute the process with shortest remaining time.'\n\nName the algorithm.",
+`Layer 13
+
+Hashes flood the CPU.
+
+Processes compete for execution.
+
+"Execute the process
+with shortest remaining time."
+
+Name the scheduler.`,
+
 answer: "srtf",
+
 hint: "Preemptive scheduling"
 },
 
 {
 riddle:
-"Layer 14\n\nThe scheduler opens virtualization chambers.\nMachines run within machines.\n\n'Who controls the virtual worlds?'",
+`Layer 14
+
+The scheduler opens
+virtualization chambers.
+
+Machines run within machines.
+
+Who controls these worlds?`,
+
 answer: "hypervisor",
+
 hint: "VM manager"
 },
 
 {
 riddle:
-"Layer 15\n\nThe virtual world forms a graph.\nTraversal begins level by level.\nA queue guides the journey.\n\nName the traversal.",
+`Layer 15
+
+The virtual world forms a graph.
+
+Traversal begins
+layer by layer.
+
+A queue guides the journey.
+
+Name the traversal.`,
+
 answer: "bfs",
-hint: "Breadth"
+
+hint: "Breadth First"
 },
 
 {
 riddle:
-"Layer 16\n\nTraversal reveals corrupted memory.\nBits have flipped.\nExtra parity must repair them.\n\nName the code.",
+`Layer 16
+
+Traversal reveals corrupted memory.
+
+Bits have flipped.
+
+Extra parity must repair them.
+
+Name the code.`,
+
 answer: "hammingcode",
+
 hint: "Error correction"
 },
 
 {
 riddle:
-"Layer 17\n\nRecovered data points toward an ancient SQL terminal.\nA command blinks:\n\n'Remove the table completely.'\n\nType the command.",
+`Layer 17
+
+Recovered data reveals
+an ancient SQL terminal.
+
+A command blinks:
+
+"Remove the table completely."
+
+Type the command.`,
+
 answer: "drop",
+
 hint: "DDL"
 },
 
 {
 riddle:
-"Layer 18\n\nThe deleted tables expose an API gateway.\nServers answer distant clients.\nThe architecture becomes clear.\n\nName the model.",
+`Layer 18
+
+Deleted tables expose
+an API gateway.
+
+Servers answer distant clients.
+
+Name the architecture.`,
+
 answer: "clientserver",
+
 hint: "Distributed systems"
 },
 
 {
 riddle:
-"Layer 19\n\nThe gateway measures search efficiency.\nEach split halves the remaining space.\n\nState the complexity.",
+`Layer 19
+
+The gateway measures
+search efficiency.
+
+Each split halves
+the remaining space.
+
+State the complexity.`,
+
 answer: "logn",
+
 hint: "Binary search"
 },
 
 {
 riddle:
-"Layer 20\n\nThe search locates hidden files.\nThey travel securely through SSH tunnels.\n\nName the protocol.",
+`Layer 20
+
+The search locates hidden files.
+
+They travel securely
+through SSH tunnels.
+
+Name the protocol.`,
+
 answer: "sftp",
+
 hint: "Secure file transfer"
 },
 
 {
 riddle:
-"Layer 21\n\nThe files overflow memory.\nPages must be replaced.\nThe oldest untouched memories fade first.\n\nWhich algorithm decides?",
+`Layer 21
+
+The files overflow memory.
+
+Old pages fade first.
+
+Which algorithm decides
+what survives?`,
+
 answer: "lru",
+
 hint: "Page replacement"
 },
 
 {
 riddle:
-"Layer 22\n\nOne surviving file contains plaintext secrets.\nThey must become unreadable.\n\nName the process.",
+`Layer 22
+
+One surviving file
+contains plaintext secrets.
+
+They must become unreadable.
+
+Name the process.`,
+
 answer: "encryption",
+
 hint: "Cryptography"
 },
 
 {
 riddle:
-"Layer 23\n\nEncrypted scripts awaken a runtime.\nBuilt upon Chrome's V8 engine,\nit escapes the browser.\n\nName it.",
+`Layer 23
+
+Encrypted scripts awaken
+a runtime.
+
+Built upon Chrome's V8 engine,
+it escapes the browser.
+
+Name it.`,
+
 answer: "nodejs",
+
 hint: "JavaScript runtime"
 },
 
 {
 riddle:
-"Layer 24\n\nThe runtime creates an object.\nOnly one instance may ever exist.\n\nName the design pattern.",
+`Layer 24
+
+The runtime creates an object.
+
+Only one instance
+may ever exist.
+
+Name the design pattern.`,
+
 answer: "singleton",
+
 hint: "Creational pattern"
 },
 
 {
 riddle:
-"Layer 25\n\nThe final chamber opens.\nBeneath every abstraction,\nbeneath memory, processes, schedulers,\nand machines themselves...\n\nOne hidden layer controls all.\n\nName it.",
+`Layer 25
+
+The final chamber opens.
+
+Beneath memory,
+processes,
+schedulers,
+and machines themselves...
+
+One hidden layer controls all.
+
+Name it.`,
+
 answer: "operatingsystem",
+
 hint: "Kernel space"
 }
 
 ];
 
-let currentLevel = parseInt(localStorage.getItem("cse_level")) || 0;
+let currentLevel =
+  parseInt(
+    localStorage.getItem("cse_level")
+  ) || 0;
 
-const levelTitle = document.getElementById("levelTitle");
-const riddleText = document.getElementById("riddleText");
-const answerInput = document.getElementById("answerInput");
-const submitBtn = document.getElementById("submitBtn");
-const message = document.getElementById("message");
-const progressText = document.getElementById("progressText");
-const hintBox = document.getElementById("hintBox");
-const gameCard = document.getElementById("gameCard");
+const levelTitle =
+  document.getElementById("levelTitle");
+
+const riddleText =
+  document.getElementById("riddleText");
+
+const answerInput =
+  document.getElementById("answerInput");
+
+const submitBtn =
+  document.getElementById("submitBtn");
+
+const message =
+  document.getElementById("message");
+
+const progressText =
+  document.getElementById("progressText");
+
+const hintBox =
+  document.getElementById("hintBox");
+
+const gameCard =
+  document.getElementById("gameCard");
+
+const restartBtn =
+  document.getElementById("restartBtn");
 
 function loadLevel() {
 
@@ -195,38 +483,52 @@ function loadLevel() {
 
     gameCard.innerHTML = `
       <div class="final-screen">
-        <h1>🏆 You Escaped All 25 Layers</h1>
+
+        <h1>
+          🏆 You Escaped All 25 Layers
+        </h1>
 
         <p>
-          You survived one of the hardest Computer Science riddle vaults.<br><br>
+          You survived one of the hardest
+          Computer Science puzzle vaults.
+
+          <br><br>
 
           Algorithms.<br>
-          Distributed Systems.<br>
+          Networking.<br>
           Operating Systems.<br>
           Cryptography.<br>
-          Networking.<br>
-          Theory of Computation.<br><br>
+          Databases.<br>
+          Distributed Systems.<br>
+
+          <br>
 
           Respect.
         </p>
 
         <div class="small">
-          Progress is saved automatically.
+          Refresh the page to play again.
         </div>
+
       </div>
     `;
 
     return;
   }
 
-  const level = levels[currentLevel];
+  const level =
+    levels[currentLevel];
 
-  levelTitle.innerText = `Layer ${currentLevel + 1}`;
+  levelTitle.innerText =
+    `Layer ${currentLevel + 1}`;
 
-  riddleText.innerText = level.riddle;
+  riddleText.innerText =
+    level.riddle;
 
   progressText.innerText =
-    `Progress: ${currentLevel + 1} / ${levels.length}`;
+    `Progress:
+     ${currentLevel + 1}
+     / ${levels.length}`;
 
   answerInput.value = "";
 
@@ -236,48 +538,104 @@ function loadLevel() {
 }
 
 function showHint() {
-  hintBox.innerText = "💡 Hint: " + levels[currentLevel].hint;
+
+  hintBox.innerText =
+    "💡 Hint: " +
+    levels[currentLevel].hint;
+
   hintBox.style.display = "block";
 }
 
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener(
+  "click",
+  () => {
 
-  const userAnswer =
-    answerInput.value
-      .trim()
-      .toLowerCase()
-      .replace(/\s+/g, "");
+    const userAnswer =
+      answerInput.value
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, "");
 
-  const correct =
-    levels[currentLevel]
-      .answer
-      .toLowerCase();
+    const correct =
+      levels[currentLevel]
+        .answer
+        .toLowerCase();
 
-  if (userAnswer === correct) {
+    if (userAnswer === correct) {
 
-    message.innerText = "✅ Correct. Next layer unlocked.";
-    message.className = "success";
+      message.innerText =
+        "✅ Correct. Next layer unlocked.";
 
-    currentLevel++;
+      message.className =
+        "success";
 
-    localStorage.setItem("cse_level", currentLevel);
+      currentLevel++;
 
-    setTimeout(loadLevel, 1200);
+      localStorage.setItem(
+        "cse_level",
+        currentLevel
+      );
 
-  } else {
+      setTimeout(
+        loadLevel,
+        1000
+      );
 
-    message.innerText = "❌ Incorrect password.";
-    message.className = "error";
+    } else {
 
-    setTimeout(showHint, 2000);
+      message.innerText =
+        "❌ Incorrect password.";
+
+      message.className =
+        "error";
+
+      setTimeout(
+        showHint,
+        2000
+      );
+    }
+
   }
+);
 
-});
+answerInput.addEventListener(
+  "keypress",
+  e => {
 
-answerInput.addEventListener("keypress", function(e) {
-  if (e.key === "Enter") {
-    submitBtn.click();
+    if (e.key === "Enter") {
+      submitBtn.click();
+    }
+
   }
-});
+);
+
+restartBtn.addEventListener(
+  "click",
+  () => {
+
+    const confirmRestart =
+      confirm(
+        "Restart the entire game?"
+      );
+
+    if (confirmRestart) {
+
+      localStorage.removeItem(
+        "cse_level"
+      );
+
+      currentLevel = 0;
+
+      loadLevel();
+
+      message.innerText =
+        "Game restarted.";
+
+      message.className =
+        "success";
+    }
+
+  }
+);
 
 loadLevel();
