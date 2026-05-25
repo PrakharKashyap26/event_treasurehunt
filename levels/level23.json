@@ -1,0 +1,11 @@
+{
+  "id": 23,
+  "title": "Execution",
+  "story": "The interface supports custom command triggers. Execute the function hook registered on the global stack.",
+  "answer": "resonance",
+  "hints": [
+    "In the browser console, call the function: getAetherKey()",
+    "Type 'getAetherKey()' and press Enter."
+  ],
+  "puzzleType": "global-function"
+}

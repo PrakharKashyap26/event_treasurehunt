@@ -1,0 +1,11 @@
+{
+  "id": 8,
+  "title": "Rotation",
+  "story": "A classic defensive mechanism. The characters have been shifted by 13 positions: zngevk",
+  "answer": "matrix",
+  "hints": [
+    "This is a ROT13 cipher.",
+    "Each letter is shifted by 13 spaces in the alphabet."
+  ],
+  "puzzleType": "rot13"
+}

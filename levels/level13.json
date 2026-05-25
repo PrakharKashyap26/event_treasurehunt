@@ -1,0 +1,11 @@
+{
+  "id": 13,
+  "title": "Navigation",
+  "story": "The current location pointer has been updated. Look at the end of the location address.",
+  "answer": "anchor",
+  "hints": [
+    "Look at the URL in your browser's address bar.",
+    "Check the part of the URL after the # (the hash or fragment identifier)."
+  ],
+  "puzzleType": "url-hash"
+}

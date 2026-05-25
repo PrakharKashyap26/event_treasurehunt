@@ -1,0 +1,11 @@
+{
+  "id": 5,
+  "title": "Transmission",
+  "story": "AETHER transmits diagnostic data. Open the system's interactive console to receive the direct frequency.",
+  "answer": "terminal",
+  "hints": [
+    "Inspect the browser's developer console (F12 or Ctrl+Shift+I).",
+    "AETHER logs its transmission directly to the console output."
+  ],
+  "puzzleType": "console-log"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 19,
+  "title": "Rearrangement",
+  "story": "The network fragments have been jumbled. Rearrange the characters of this word to reveal the target: silent",
+  "answer": "listen",
+  "hints": [
+    "Create an anagram of the word 'silent'.",
+    "The word begins with the letter 'l' and is related to hearing."
+  ],
+  "puzzleType": "anagram"
+}

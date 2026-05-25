@@ -1,0 +1,11 @@
+{
+  "id": 21,
+  "title": "Identity",
+  "story": "A new class of operator has joined the grid. Check the CSS classes of the input prompt area.",
+  "answer": "spectre",
+  "hints": [
+    "Inspect the element with ID 'input-container'.",
+    "Look at the list of classes assigned to that section."
+  ],
+  "puzzleType": "dom-class"
+}

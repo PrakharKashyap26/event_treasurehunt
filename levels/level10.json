@@ -1,0 +1,11 @@
+{
+  "id": 10,
+  "title": "Runtime",
+  "story": "At runtime, memory address spaces can be queried. Inspect the global environment variables.",
+  "answer": "global",
+  "hints": [
+    "Open the console and check the global window context.",
+    "Type 'window.aether_key' or simply 'aether_key'."
+  ],
+  "puzzleType": "window-variable"
+}

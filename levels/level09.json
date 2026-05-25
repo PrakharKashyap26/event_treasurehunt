@@ -1,0 +1,11 @@
+{
+  "id": 9,
+  "title": "Obscurity",
+  "story": "Some elements exist in the system architecture but are rendered invisible to the human eye.",
+  "answer": "shadow",
+  "hints": [
+    "Look for a hidden element added to the DOM.",
+    "Check the body tag for a div with display: none."
+  ],
+  "puzzleType": "hidden-dom"
+}

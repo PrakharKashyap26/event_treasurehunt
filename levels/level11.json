@@ -1,0 +1,11 @@
+{
+  "id": 11,
+  "title": "Variables",
+  "story": "Modern styling frameworks use custom root variables to maintain design consistency. Find the root variable.",
+  "answer": "nebula",
+  "hints": [
+    "Look at the computed styles on the root element.",
+    "Inspect the CSS custom properties of the :root selector."
+  ],
+  "puzzleType": "css-variable"
+}

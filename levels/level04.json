@@ -1,0 +1,11 @@
+{
+  "id": 4,
+  "title": "Volatility",
+  "story": "The stream of data flows continuously. But look closer at your storage—temporary fragments are stored as cookies.",
+  "answer": "cookie",
+  "hints": [
+    "Cookies aren't just for eating.",
+    "Check your browser's active cookies for 'aether_secret'."
+  ],
+  "puzzleType": "cookie"
+}

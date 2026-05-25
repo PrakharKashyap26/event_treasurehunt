@@ -1,0 +1,11 @@
+{
+  "id": 17,
+  "title": "Redirection",
+  "story": "An anchor has been dropped somewhere in the ocean of this document's DOM hierarchy.",
+  "answer": "portal",
+  "hints": [
+    "Search for anchor tags (<a>) in the HTML document.",
+    "Inspect the href attribute of the hidden link."
+  ],
+  "puzzleType": "hidden-link"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 6,
+  "title": "Encapsulation",
+  "story": "Components hide properties within themselves. Find the element housing the terminal and inspect its DOM attributes.",
+  "answer": "attribute",
+  "hints": [
+    "Inspect the DOM tree in the Elements tab.",
+    "Look at the attributes of the <main id=\"terminal\"> element."
+  ],
+  "puzzleType": "dom-attribute"
+}

@@ -1,0 +1,11 @@
+{
+  "id": 7,
+  "title": "Encoding",
+  "story": "We intercepted a secure broadcast, but it is masked. Translate this string: ZGVjb2Rl",
+  "answer": "decode",
+  "hints": [
+    "The string is encoded in Base64 format.",
+    "Use a Base64 decoder or the window.atob() method in console."
+  ],
+  "puzzleType": "base64"
+}

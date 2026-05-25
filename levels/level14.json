@@ -1,0 +1,11 @@
+{
+  "id": 14,
+  "title": "Binary",
+  "story": "The machine speaks only in low-level binary states: 01100010 01101001 01101110 01100001 01110010 01111001",
+  "answer": "binary",
+  "hints": [
+    "Convert the binary string into ASCII text.",
+    "Each 8-bit block represents a single character."
+  ],
+  "puzzleType": "binary-ascii"
+}

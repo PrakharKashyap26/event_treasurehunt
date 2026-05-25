@@ -1,0 +1,11 @@
+{
+  "id": 12,
+  "title": "Volatility",
+  "story": "Unlike persistent local storage, session storage vanishes when the tab is closed. Check the current session record.",
+  "answer": "session",
+  "hints": [
+    "Open browser Application/Storage tab.",
+    "Check the Session Storage values for this site."
+  ],
+  "puzzleType": "session-storage"
+}

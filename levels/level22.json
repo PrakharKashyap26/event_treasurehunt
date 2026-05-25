@@ -1,0 +1,11 @@
+{
+  "id": 22,
+  "title": "Diagnostics",
+  "story": "The system telemetry is throwing anomalies. Review the alert diagnostics in the web inspector.",
+  "answer": "warning",
+  "hints": [
+    "Open the console log.",
+    "Look specifically at the yellow console warning messages."
+  ],
+  "puzzleType": "console-warn"
+}

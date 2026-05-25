@@ -1,0 +1,11 @@
+{
+  "id": 15,
+  "title": "Hexadecimal",
+  "story": "Bytes of raw data are formatted as base-16 hexadecimal values: 68 65 78 61 64 65 63 69 6d 61 6c",
+  "answer": "hexadecimal",
+  "hints": [
+    "Decode the hexadecimal bytes into text.",
+    "Each pair of hex numbers represents a character (e.g., 68 = h)."
+  ],
+  "puzzleType": "hex-ascii"
+}

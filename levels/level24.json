@@ -1,0 +1,11 @@
+{
+  "id": 24,
+  "title": "Metadata",
+  "story": "Secrets are sometimes embedded directly in the document metadata, invisible in the main viewport.",
+  "answer": "entropy",
+  "hints": [
+    "Look at the metadata inside the <head> tags.",
+    "Find the <meta> tag with the name 'aether-key' and read its content."
+  ],
+  "puzzleType": "meta-tag"
+}

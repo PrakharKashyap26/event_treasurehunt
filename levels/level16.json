@@ -1,0 +1,11 @@
+{
+  "id": 16,
+  "title": "Signal",
+  "story": "An analog transmission from a distant beacon: .- -. -.. .-. --- -- . -.. .-",
+  "answer": "andromeda",
+  "hints": [
+    "Decode the Morse code sequence.",
+    "Spaces separate individual letters."
+  ],
+  "puzzleType": "morse-code"
+}

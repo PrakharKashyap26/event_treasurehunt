@@ -1,0 +1,11 @@
+{
+  "id": 20,
+  "title": "Sequence",
+  "story": "Predict the next value in the growth algorithm sequence: 1, 1, 2, 3, 5, 8, 13, 21, 34, ?",
+  "answer": "55",
+  "hints": [
+    "This is the Fibonacci sequence.",
+    "Add the last two numbers together (21 + 34) to find the answer."
+  ],
+  "puzzleType": "fibonacci"
+}

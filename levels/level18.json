@@ -1,0 +1,11 @@
+{
+  "id": 18,
+  "title": "Reversal",
+  "story": "The timeline flows backward. Invert the following sequence of letters to reveal the path: egarem",
+  "answer": "mirage",
+  "hints": [
+    "Simply read the word in reverse order.",
+    "Write 'egarem' backwards."
+  ],
+  "puzzleType": "reverse-string"
+}
